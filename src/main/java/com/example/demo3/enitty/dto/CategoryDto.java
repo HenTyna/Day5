@@ -10,6 +10,6 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CategoryDto {
-    private UUID id;
+    private Long id;
     private String name;
 }

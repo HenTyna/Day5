@@ -10,6 +10,6 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CommentDto {
-    private UUID id;
+    private Long id;
     private String caption;
 }

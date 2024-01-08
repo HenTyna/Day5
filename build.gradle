@@ -22,10 +22,22 @@ repositories {
 }
 
 dependencies {
+//    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+//    implementation 'org.springframework.boot:spring-boot-starter-web'
+//    compileOnly 'org.projectlombok:lombok'
+//    runtimeOnly 'org.postgresql:postgresql:42.2.24' // Replace with the latest version
+//    annotationProcessor 'org.projectlombok:lombok'
+//    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+//    implementation 'org.springframework.boot:spring-boot-starter-validation'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'jakarta.mail:jakarta.mail-api:2.1.0'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf:3.1.2'
+    implementation 'org.springframework.boot:spring-boot-starter-mail:3.1.1'
     compileOnly 'org.projectlombok:lombok'
-    runtimeOnly 'org.postgresql:postgresql:42.2.24' // Replace with the latest version
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.0.2'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    runtimeOnly 'org.postgresql:postgresql'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
