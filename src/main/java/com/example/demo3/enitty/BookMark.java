@@ -14,17 +14,21 @@ import java.util.UUID;
 @NoArgsConstructor
 @Table(name = "bookmarks")
 public class BookMark {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     @ManyToOne
     @JoinColumn(name = "article_id")
     private Article article;
-    @ManyToOne(fetch = FetchType.LAZY)
+
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
     private User user;
 
-    public BookmarkDto toDto(){
+    public BookmarkDto toDto() {
         return new BookmarkDto(this.article.toDto());
     }
 }
+

@@ -5,6 +5,7 @@ import com.example.demo3.enitty.Category;
 import com.example.demo3.enitty.Comment;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -15,8 +16,9 @@ import java.util.UUID;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class ArticleDto {
-    private UUID id;
+    private Long id;
     private String title;
     private String description;
     @JsonInclude(JsonInclude.Include.NON_EMPTY)
@@ -28,7 +30,7 @@ public class ArticleDto {
     private List<BookMark> bookmarkDtos;
     private Boolean publish;
 
-    public ArticleDto(UUID id, String title, String description, UserDto user, List<Comment> commentDtos, List<Category> categoryDtos,Boolean publish) {
+    public ArticleDto(Long id, String title, String description, UserDto user, List<Comment> commentDtos, List<Category> categoryDtos,Boolean publish) {
         this.id = id;
         this.title = title;
         this.description = description;

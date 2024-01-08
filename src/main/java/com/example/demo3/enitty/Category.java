@@ -6,27 +6,29 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+@Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
 @Table(name = "categories")
 public class Category {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "category_id")
-    private UUID id;
+    private Long id;
 
     @Column(name = "category_name", unique = true)
     private String name;
 
     @ManyToMany(fetch = FetchType.LAZY, mappedBy = "categoryList")
-    private List<Article> articles;
+    private List<Article> articles = new ArrayList<>();
 
-    public Category(UUID id, String name) {
+    public Category(Long id, String name) {
         this.id = id;
         this.name = name;
     }
@@ -35,3 +37,4 @@ public class Category {
         return new CategoryDto(this.id, this.name);
     }
 }
+

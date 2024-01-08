@@ -10,7 +10,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 public class BookmarkDto {
-    private UUID id;
+    private Long id;
     private ArticleDto articleDto;
     private UserDto userDto;
 
